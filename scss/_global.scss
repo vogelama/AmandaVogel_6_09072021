@@ -1,0 +1,22 @@
+//font 
+@import url("https://fonts.googleapis.com/css?family=DM+Sans");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-DM;
+}
+
+.photographer {
+
+    &__circleimg {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}

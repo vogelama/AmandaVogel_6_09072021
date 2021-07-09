@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.photographer__circleimg {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=styles.css.map */
