@@ -9,14 +9,24 @@
 
 body {
     font-family: $font-DM;
+    font-size: 1em;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: $primaryDarkClr;
+    font-weight: bold;
 }
 
 .photographer {
 
     &__circleimg {
-        width: 200px;
-        height: 200px;
+        width: 135px;
+        height: 135px;
         object-fit: cover;
         border-radius: 50%;
+        box-shadow: 2px 5px 5px rgba(0,0,0,.15);
     }
 }

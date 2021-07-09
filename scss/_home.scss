@@ -1,0 +1,158 @@
+// Header 
+
+.header {
+    position: fixed;
+    display: block;
+    width: 100%;
+    padding: 0px 80px 10px 80px;
+    background-color: #fff;
+
+    @include breakpoint-down(medium) {
+        padding: 0px 40px 10px 40px;
+    }
+
+    @include breakpoint-down(small) {
+        padding: 0px 20px 10px 20px;
+    }
+
+    &__topOfPage {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 1em;
+        color: #fff;
+        background-color: $primaryDarkClr;
+        padding: 2px 15px;
+        border-radius: 5px;
+
+        &:hover,:focus {
+            background-color: $primaryLightClr;
+            color: #000;
+        }
+
+        @include breakpoint-down(small) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__logo-and-nav {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        width: 69.5%;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include breakpoint-down(large) {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    &__logo img {
+        width: 150px;
+        margin-right: 75px;
+
+        @include breakpoint-down(small) {
+            width: 125px;
+        }
+    }
+
+    &__navlinks {
+        padding-top: 8px;
+
+        @include breakpoint-down(large) {
+            display: block;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+    }
+
+    &__navlink {
+        margin-bottom: 5px;
+        padding: 2px 6px;
+        border: .5px solid $secondaryLightClr;
+        border-radius: 11px;
+        font-size: .75em;
+
+        &:hover,:focus {
+            background-color: $primaryDarkClr;
+            color: #fff;
+        }
+    }
+}
+
+// Main
+
+.main {
+    padding-top: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include breakpoint-down(large) {
+        padding-top: 200px;
+    }
+}
+
+.photographers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px 125px;
+
+    &__title {
+        position: fixed;
+        right: 80px; 
+        top: 41px;
+        font-size: 1.75em;
+        color: $primaryDarkClr;
+
+        @include breakpoint-down(medium) {
+            font-size: .9em;
+            top: 50px;
+            right: 40px;
+        }
+
+        @include breakpoint-down(small) {
+            right: 20px;
+        }
+    }
+}
+
+.photographer {
+    width: 275px;
+
+    &__name {
+        margin-top: 8px;
+        font-size: 1.75em;
+        color: $primaryMediumClr;
+    }
+
+    &__city {
+        font-size: 1em;
+        color: $primaryDarkClr;
+    }
+
+    &__tagline {
+        margin-bottom: 3px;
+        font-size: .8em;
+    }
+
+    &__price {
+        margin-bottom: 7px;
+        font-size: .7em;
+        color: $secondaryDarkClr;
+    }
+
+    &__taglink {
+        margin-bottom: 5px;
+        padding: 2px 6px;
+        border: .5px solid $secondaryLightClr;
+        border-radius: 11px;
+        font-size: .75em;
+
+        &:hover,:focus {
+            background-color: $primaryDarkClr;
+            color: #fff;
+        }
+    }
+}
