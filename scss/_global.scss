@@ -17,7 +17,22 @@ a {
     display: inline-block;
     text-decoration: none;
     color: $primaryDarkClr;
-    font-weight: bold;
+    cursor: pointer;
+}
+
+button {
+    display: inline-block;
+    background-color: $primaryDarkClr;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primaryLightClr;
+        color: #000;
+    }
+
 }
 
 .photographer {
