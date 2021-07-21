@@ -97,11 +97,7 @@ const clickOnTags = () => {
 clickOnTags();
 /////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
+// filterObjects(tag.className.split('tagLink ')[1]);
 
 
 

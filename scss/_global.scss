@@ -20,10 +20,17 @@ a {
     cursor: pointer;
 }
 
+p {
+    color: $primaryDarkClr;
+}
+
 button {
-    display: inline-block;
+    display: block;
     background-color: $primaryDarkClr;
     color: #fff;
+    font-family: $font-DM;
+    font-weight: $font-bold;
+    padding: 14px 12px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
