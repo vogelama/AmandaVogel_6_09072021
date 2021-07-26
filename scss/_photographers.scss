@@ -5,12 +5,12 @@
     position: fixed;
     display: block;
     width: 100%;
-    padding: 35px 80px 0px 80px;
+    padding: 30px 80px 0px 80px;
     background-color: #fff;
-    z-index: 2;
+    z-index: 3;
 
     @include breakpoint-down(medium) {
-        padding: 35px 40px 0px 40px;
+        padding: 30px 40px 0px 40px;
     }
 
     @include breakpoint-down(small) {
@@ -23,10 +23,11 @@
 .main {
 
     &__photographer {
-        padding: 78px 80px 50px 80px;
+        padding: 73px 80px 50px 80px;
+        text-align: left;
 
         @include breakpoint-down(medium) {
-            padding: 78px 40px 25px 40px;
+            padding: 73px 40px 25px 40px;
         }
     
         @include breakpoint-down(small) {
@@ -39,11 +40,11 @@
     &__info {
         position: fixed;
         width: 100%;
-		background-color: #fff;
+		    background-color: #fff;
         text-align: left;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        z-index: 1;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 2;
 
         @include breakpoint-down(small) {
             padding-top: 10px;
@@ -52,28 +53,28 @@
     }
 
 		&__infobg {
-			width: calc(100% - 160px);
-			padding: 35px 30px 35px 30px;
-			background-color: rgba(250, 250, 250, 1);
+        width: calc(100% - 160px);
+        padding: 35px 30px 35px 30px;
+        background-color: rgba(250, 250, 250, 1);
 
 			 @include breakpoint-down(medium) {
             width: calc(100% - 80px);
-			padding: 20px;
+		      	padding: 20px;
             }
     
         @include breakpoint-down(small) {
             width: 100%;
-			background-color: #fff;
-			padding: 0px;
+            background-color: #fff;
+            padding: 0px;
             }
 	    }
 }
 
 .photographer__name2 {
     font-size: 3em;
-	margin-top: 0px;
-	padding-right: 90px;
-	font-weight: lighter;
+    margin-top: 0px;
+    padding-right: 90px;
+    font-weight: lighter;
 
 		@include breakpoint-down(small) {
 			font-size: 1.75em;
@@ -89,13 +90,13 @@
 }
 
 .photographer__tagline2 {
-	padding-right: 94px;
+	padding-right: 130px;
 }
 
 .tagLinksNav2 {
 	@include breakpoint-down(small) {
 		padding-top: 0px;
-		padding-right: 85px;
+		padding-right: 125px;
 	}
 }
 
@@ -122,9 +123,9 @@
 
 .photographer__circleimg2 {
 	position: absolute;
-    right: 190px;
+  right: 190px;
 	top: 50%;
-    transform: translateY(-50%);
+  transform: translateY(-50%);
 	width: 135px;
 	height: 135px;
 	object-fit: cover;
@@ -156,7 +157,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     position: absolute;
-    top: calc(100vh - 113px);
+    top: calc(100vh - 108px);
     right: 100px;
 
     @include breakpoint-down(medium) {
@@ -188,33 +189,126 @@
     }
 }
 
+// Dropdown Menu 
+
+.dropdown {
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+
+
+  &__label {
+    padding-top: 278px;  
+    display: inline-block;
+    color: #000;
+    font-size: .8em;
+    font-weight: $font-bold;
+    padding-right: 15px;
+
+    @include breakpoint-down(medium) {
+      padding-top: 243px;
+    }
+
+    @include breakpoint-down(small) {
+      padding-top: 150px;
+    }
+
+    @media only screen and (max-width: 385px) {
+      padding-top: 175px;
+    }
+
+    @media only screen and (max-width: 305px) {
+      padding-top: 190px;
+    }
+  }
+
+  &-toggle {
+    appearance: none;
+    text-align: left;
+    background-color: $primaryDarkClr;
+    color: #fff;
+    font-size: .8em;
+    font-family: $font-DM;
+    font-weight: $font-bold;
+    padding: 17px 34px 17px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 135px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::after {
+      position: absolute;
+      top: 21px;
+      right: 15px;
+      font-family: FontAwesome;
+      content: '\f078';      
+      font-size: .85em;
+    }
+
+    &.active::after {
+      content: '\f077';
+    }
+  }
+
+  &-menu {
+    z-index: 1;
+    list-style: none;
+    background-color: $primaryDarkClr;
+    color: #fff;
+    font-size: .8em;
+    font-family: $font-DM;
+    width: 135px;
+    position: absolute;
+    bottom: -131px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    visibility: hidden;
+
+    &[aria-expanded="true"] {
+      visibility: visible;
+    }
+
+    li {
+      padding: 14px 34px 14px 10px;
+      font-weight: $font-bold;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 90%;
+        border-top: 1px solid #fff;
+        position: absolute;
+        top: 0;
+        left: 5px;
+      }
+
+      &:hover {
+        background-color: $primaryLightClr;
+        color: #000;
+      }
+    }
+  }
+}
+
 // Portfolio Images 
 
 .portfolio {
 
-	&__row {
-		margin-top: 285px;
-        padding-bottom: 75px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px 30px;
-        justify-content: center;
-
-        @include breakpoint-down(large) {
-            margin-top: 300px;
-        }
-
-        @include breakpoint-down(medium) {
-            margin-top: 275px;
-        }
-
-        @include breakpoint-down(small) {
-            margin-top: 165px;
-        }
-	}
+    &__row {
+      padding-bottom: 75px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 30px;
+      justify-content: center;
+    }
 
     &__column {
-        // flex-grow: 1;
         width: 30.8%;
         margin-bottom: 20px;
         overflow-x: hidden;
@@ -264,4 +358,229 @@ video {
         width: 100vw;
     }
 }
+
+// Contact Form Modal 
+  
+  .bground {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: none;
+
+    @include breakpoint-down(small) {
+        background-color: #fff;
+    }
+  }
+  
+  .content {
+    margin: 5% auto;
+    width: 450px;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+    background-color: $primaryLightClr;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    text-align: left;
+
+    @include breakpoint-down(small) {
+        width: 100%;
+        margin: 0;
+    }
+  }
+  
+  .modal-body {
+    padding: 15px 8% 20px 8%;
+    margin: 0px auto;
+  }
+
+  .form-title {
+    font-size: 2.35em;
+    line-height: 1.15em;
+    color: #000;
+	  font-weight: lighter;
+    padding-bottom: 20px;
+    padding-right: 30px;
+
+		@include breakpoint-down(small) {
+			font-size: 1.75em;
+		} 
+  }
+  
+  label {
+    font-size: 1.2em;
+    color: rgba(49, 46, 46, 1);
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+  
+  input {
+    padding: 8px;
+    border: none;
+    outline: none;
+  }
+
+  .text-control {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1em;
+    height: 48px;
+  }
+
+  .formData {
+    position: relative;
+  }
+
+  textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: #fff;
+    padding: 10px;
+    margin-bottom: 0;
+    color: #000;
+    font-size: 1em;
+    font-family: $font-DM;
+  }
+
+  .button-submit {
+    margin-top: 10px;
+    padding: 15px 35px;
+
+    &:hover {
+        background-color: $primaryDarkClr;
+        color: #fff;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+  }
+
+  .close:before,
+  .close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 3px;
+    background-color: #fff;
+  }
+
+  .close:before {
+    transform: rotate(45deg);
+  }
+
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+  .text-label {
+    font-weight: normal;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+// Showing Data Errors 
+.formData.error {
+    margin-bottom: 0px;
+  }
+  
+  .formData.error input, .formData.error textarea {
+    border: 3px solid $primaryDarkClr;
+  }
+  
+  .formData.success input, .formData.success textarea {
+    border: 3px solid #279e7a;
+  }
+  
+  .formData small {
+    visibility: hidden;
+    display: block;
+    padding: 2px;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    font-family: inherit;
+    font-size: .85rem;
+  }
+  
+  .formData.error small {
+    color: $primaryDarkClr;
+    visibility: visible;
+  }
+
+// Success Message Styles
+.success-background {
+    display: block;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: none; 
+
+    @include breakpoint-down(small) {
+        background-color: #fff;
+    }
+  }
+  
+  .success-content {
+    margin: 5% auto;
+    height: 725px;
+    width: 450px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: $primaryLightClr;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint-down(small) {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+  }
+  
+  .success-message {
+    font-size: 2.35em;
+    line-height: 1.15em;
+    color: #000;
+  	font-weight: lighter;
+  }
+  
+  .btn-close {
+    padding: 15px 35px;
+    position: absolute;
+    bottom: 40px; 
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+        background-color: $primaryDarkClr;
+        color: #fff;
+    }
+  }
+
+  // End Modal Form 
 

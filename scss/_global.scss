@@ -1,5 +1,6 @@
 //font 
 @import url("https://fonts.googleapis.com/css?family=DM+Sans");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 * {
     box-sizing: border-box;
@@ -24,7 +25,7 @@ p {
     color: $primaryDarkClr;
 }
 
-button {
+.button {
     display: block;
     background-color: $primaryDarkClr;
     color: #fff;
