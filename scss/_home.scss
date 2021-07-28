@@ -29,7 +29,8 @@
 }
 
 .header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     display: block;
     width: 100%;
     padding: 0px 80px 10px 80px;
@@ -55,6 +56,7 @@
         @include breakpoint-down(large) {
             flex-direction: column;
             width: 100%;
+            padding-right: 0px;
         }
     }
 
@@ -71,9 +73,15 @@
 .tagLinksNav {
     padding-top: 8px;
 
+    a {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
     @include breakpoint-down(large) {
         display: block;
         margin: 0 auto;
+        padding-top: 30px;
     }
 }
 
@@ -82,13 +90,9 @@
 // Main
 
 .main {
-    padding-top: 150px;
+    padding-top: 30px;
     padding-left: 40px;
     padding-right: 40px;
-
-    @include breakpoint-down(large) {
-        padding-top: 200px;
-    }
 }
 
 .photographers {
@@ -150,7 +154,7 @@
 }
 
 .tagLink {
-    margin-bottom: 5px;
+    margin: 2px;
     padding: 2px 6px;
     border: .5px solid $secondaryLightClr;
     border-radius: 11px;

@@ -44,8 +44,7 @@ filterObjects("all");
 
 // FUNCTION TO MAKE ACTIVE HASHTAG FILTERS HAVE ACTIVE CLASS AND NON ACTIVE HASHTAG FILTERS TO NOT BE ACTIVE
 
-const tagsNav = [...document.querySelectorAll('.tagLink')];
-const removeActiveLinks = () => {
+const removeActiveLinks = (tagsNav) => {
     for (let tag of tagsNav) {
         tag.classList.remove('active')
     }
@@ -57,7 +56,7 @@ const addActiveLink = (tags) => {
     }
 }
 
-const findTextContentInArray = (textContent) => {
+const findTextContentInArray = (tagsNav, textContent) => {
     const tags = tagsNav.filter(tag => tag.textContent === textContent);
     addActiveLink(tags);
 }
@@ -73,7 +72,16 @@ const clickOnTags = () => {
     }
 }
 
-clickOnTags();
+window.addEventListener('hashchange', () => {
+    const tagsNav = [...document.querySelectorAll('.tagLink')];
+    const hash = window.location.hash.replace('#', '');
+    filterObjects(hash);
+    removeActiveLinks(tagsNav);
+    findTextContentInArray(tagsNav, window.location.hash);
+    console.log(hash)
+}) 
+
+// clickOnTags();
 /////////////////////////////////////////////////////////////////////////////////////////
 
 

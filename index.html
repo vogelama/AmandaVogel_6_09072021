@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="topOfPage">
   <head>
     <meta charset="utf-8"/>
     <title>FishEye</title>
@@ -20,121 +20,49 @@
 	
 	<header class="header">
 		<a href="#topOfPage" class="topOfPageLink hideLink" id="top" title="Aller en haut">Aller en haut</a>
+		
 		<section class="header__logo-and-nav">
 			<a href="index.html" class="header__logo"><img src="img/fisheyelogo.png" alt="Fisheye Home page"></a>
 			<nav class="tagLinks tagLinksNav" id="navlinks" aria-label="photographer categories" role="navigation">
-				<a href="#" class="tagLink active all" aria-label="Link to all photographers">tous</a>
-				<a href="#" class="tagLink portrait" aria-label="Link to portrait photographers">#portrait</a>
-				<a href="#" class="tagLink art" aria-label="Link to art photographers">#art</a>
-				<a href="#" class="tagLink fashion" aria-label="Link to fashion photographers">#fashion</a>
-				<a href="#" class="tagLink architecture" aria-label="Link to architecture photographers">#architecture</a>
-				<a href="#" class="tagLink travel" aria-label="Link to travel photographers">#travel</a>
-				<a href="#" class="tagLink sports" aria-label="Link to sports photographers">#sports</a>
-				<a href="#" class="tagLink animals" aria-label="Link to animal photographers">#animals</a>
-				<a href="#" class="tagLink events" aria-label="Link to event photographers">#events</a>
+				<a href="#all" class="tagLink active" aria-label="Link to all photographers">tous</a>
+				<a href="#portrait" class="tagLink" aria-label="Link to portrait photographers">#portrait</a>
+				<a href="#art" class="tagLink" aria-label="Link to art photographers">#art</a>
+				<a href="#fashion" class="tagLink" aria-label="Link to fashion photographers">#fashion</a>
+				<a href="#architecture" class="tagLink" aria-label="Link to architecture photographers">#architecture</a>
+				<a href="#travel" class="tagLink" aria-label="Link to travel photographers">#travel</a>
+				<a href="#sports" class="tagLink" aria-label="Link to sports photographers">#sports</a>
+				<a href="#animals" class="tagLink" aria-label="Link to animal photographers">#animals</a>
+				<a href="#events" class="tagLink" aria-label="Link to event photographers">#events</a>
 			</nav>
 		</section>
 	</header>
 
-
-	<main id="topOfPage" class="main">
+	<main class="main">
 		<h1 class="photographers__title">Nos photographes</h1>
 
 		<section class="photographers">
 
-			<section class="photographer portrait events travel animals">
+			<!-- <section class="photographer portrait events travel animals">
 				<a href="photographer_Mimi-Keel.html">
-					<img src="img/Mimi/Portrait_Nora.jpg" class="photographer__circleimg" alt="Mimi Keel">
-					<h2 id="photographer__name-1" class="photographer__name"></h2>
+					<img src="img/Photographers_ID_Photos/MimiKeel.jpg" class="photographer__circleimg" alt="Mimi Keel">
+					<h2 id="photographer__name-1" class="photographer__name">Mimi Keel</h2>
 				</a>
-				<p id="photographer__city-1" class="photographer__city"></p>
-				<p id="photographer__tagline-1" class="photographer__tagline"></p>
-				<p id="photographer__price-1" class="photographer__price"></p>
+				<p id="photographer__city-1" class="photographer__city">London, UK</p>
+				<p id="photographer__tagline-1" class="photographer__tagline">Voir le beau dans le quotidien</p>
+				<p id="photographer__price-1" class="photographer__price">400€/jour</p>
 				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-1" class="tagLink portrait" aria-label="Link to other portrait photographers"></a>
-					<a href="#" id="photographer__tags2-1" class="tagLink events" aria-label="Link to other event photographers"></a>
-					<a href="#" id="photographer__tags3-1" class="tagLink travel" aria-label="Link to other travel photographers"></a>
-					<a href="#" id="photographer__tags4-1" class="tagLink animals" aria-label="Link to other animal photographers"></a>
+					<a href="#" id="photographer__tags1-1" class="tagLink portrait" aria-label="Link to other portrait photographers">portrait</a>
+					<a href="#" id="photographer__tags2-1" class="tagLink events" aria-label="Link to other event photographers">events</a>
+					<a href="#" id="photographer__tags3-1" class="tagLink travel" aria-label="Link to other travel photographers">travel</a>
+					<a href="#" id="photographer__tags4-1" class="tagLink animals" aria-label="Link to other animal photographers">animals</a>
 				</div>
-			</section>
+			</section> -->
 
-			<section class="photographer sports architecture">
-				<a href="photographer_Ellie-Rose-Wilkens.html">
-					<img src="img/Ellie Rose/Architecture_Horseshoe.jpg" class="photographer__circleimg" alt="Ellie-Rose Wilkens">
-					<h2 id="photographer__name-2" class="photographer__name"></h2>
-				</a>
-				<p id="photographer__city-2" class="photographer__city"></p>
-				<p id="photographer__tagline-2" class="photographer__tagline"></p>
-				<p id="photographer__price-2" class="photographer__price"></p>
-				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-2" class="tagLink sports" aria-label="Link to other sport photographers"></a>
-					<a href="#" id="photographer__tags2-2" class="tagLink architecture" aria-label="Link to other architecture photographers"></a>
-				</div>
-			</section>
-
-			<section class="photographer art fashion events">
-				<a href="photographer_Tracy-Galindo.html">
-					<img src="img/Tracy/Fashion_Urban_Jungle.jpg" class="photographer__circleimg" alt="Tracy Galindo">
-					<h2 id="photographer__name-3" class="photographer__name"></h2>
-				</a>
-				<p id="photographer__city-3" class="photographer__city"></p>
-				<p id="photographer__tagline-3" class="photographer__tagline"></p>
-				<p id="photographer__price-3" class="photographer__price"></p>
-				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-3" class="tagLink art" aria-label="Link to other art photographers">#Art></a>
-					<a href="#" id="photographer__tags2-3" class="tagLink fashion" aria-label="Link to other fashion photographers"></a>
-					<a href="#" id="photographer__tags3-3" class="tagLink events" aria-label="Link to other event photographers"></a>
-				</div>
-			</section>
-
-			<section class="photographer travel portrait">
-				<a href="photographer_Nabeel-Bradford.html">
-					<img src="img/Nabeel/Travel_Outdoor_Baths.jpg" class="photographer__circleimg" alt="Nabeel Bradford">
-					<h2 id="photographer__name-4" class="photographer__name"></h2>
-				</a>
-				<p id="photographer__city-4" class="photographer__city"></p>
-				<p id="photographer__tagline-4" class="photographer__tagline"></p>
-				<p id="photographer__price-4" class="photographer__price"></p>
-				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-4" class="tagLink travel" aria-label="Link to other travel photographers"></a>
-					<a href="#" id="photographer__tags2-4" class="tagLink portrait" aria-label="Link to other portrait photographers"></a>
-				</div>
-			</section>
-
-			<section class="photographer sports fashion events animals">
-				<a href="photographer_Rhode-Dubois.html">
-					<img src="img/Rhode/Fashion_Melody_Red_on_Stripes.jpg" class="photographer__circleimg" alt="Rhode Dubois">
-					<h2 id="photographer__name-5" class="photographer__name"></h2>
-				</a>
-				<p id="photographer__city-5" class="photographer__city"></p>
-				<p id="photographer__tagline-5" class="photographer__tagline"></p>
-				<p id="photographer__price-5" class="photographer__price"></p>
-				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-5" class="tagLink sports" aria-label="Link to other sport photographers"></a>
-					<a href="#" id="photographer__tags2-5" class="tagLink fashion" aria-label="Link to other fashion photographers"></a>
-					<a href="#" id="photographer__tags3-5" class="tagLink events" aria-label="Link to other event photographers"></a>
-					<a href="#" id="photographer__tags4-5" class="tagLink animals" aria-label="Link to other animal photographers"></a>
-				</div>
-			</section>
-
-			<section class="photographer travel architecture">
-				<a>
-					<img src="img/Marcel/Travel_Tower.jpg" class="photographer__circleimg" alt="Marcel Nikolic">
-					<h2 id="photographer__name-6" class="photographer__name"></h2>
-				</a>
-				<p id="photographer__city-6" class="photographer__city"></p>
-				<p id="photographer__tagline-6" class="photographer__tagline"></p>
-				<p id="photographer__price-6" class="photographer__price"></p>
-				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-6" class="tagLink travel" aria-label="Link to other travel photographers"></a>
-					<a href="#" id="photographer__tags2-6" class="tagLink architecture" aria-label="Link to other architecture photographers"></a>
-				</div>
-			</section>
 		</section>
 	</main>
 
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="js/json-data.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/photographer.js"></script>
 	<script src="js/button_scroll-to-top.js"></script>
 	<script src="js/filter_hastags.js"></script>
 	<script src="js/sort_dropdown-menu.js"></script>

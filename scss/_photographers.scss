@@ -2,15 +2,16 @@
 
 .header__photographer {
     text-align: left;
-    position: fixed;
+    position: sticky;
+    top: 0;
     display: block;
     width: 100%;
-    padding: 30px 80px 0px 80px;
+    padding: 30px 80px 6px 80px;
     background-color: #fff;
     z-index: 3;
 
     @include breakpoint-down(medium) {
-        padding: 30px 40px 0px 40px;
+        padding: 30px 40px 6px 40px;
     }
 
     @include breakpoint-down(small) {
@@ -23,22 +24,23 @@
 .main {
 
     &__photographer {
-        padding: 73px 80px 50px 80px;
+        padding: 0px 80px 50px 80px;
         text-align: left;
 
         @include breakpoint-down(medium) {
-            padding: 73px 40px 25px 40px;
+            padding: 0px 40px 25px 40px;
         }
     
         @include breakpoint-down(small) {
-            padding: 68px 20px 25px 20px;
+            padding: 0px 20px 25px 20px;
         }
     }
 
 // Photographer Banner With Info 		
 
     &__info {
-        position: fixed;
+        position: sticky;
+        top: 78px;
         width: 100%;
 		    background-color: #fff;
         text-align: left;
@@ -49,31 +51,37 @@
         @include breakpoint-down(small) {
             padding-top: 10px;
             padding-bottom: 10px;
+            top: 66px;
         }
     }
 
 		&__infobg {
-        width: calc(100% - 160px);
+        width: 100%;
         padding: 35px 30px 35px 30px;
+        padding-right: 510px;
         background-color: rgba(250, 250, 250, 1);
 
-			 @include breakpoint-down(medium) {
-            width: calc(100% - 80px);
+        @include breakpoint-down(large) {
+          padding-right: 150px;
+        }
+
+			  @include breakpoint-down(medium) {
 		      	padding: 20px;
-            }
+            padding-right: 150px;
+        }
     
         @include breakpoint-down(small) {
-            width: 100%;
             background-color: #fff;
             padding: 0px;
-            }
+            padding-right: 140px;
+        }
 	    }
 }
 
 .photographer__name2 {
-    font-size: 3em;
+    font-size: 2.5em;
+    word-wrap: break-word;
     margin-top: 0px;
-    padding-right: 90px;
     font-weight: lighter;
 
 		@include breakpoint-down(small) {
@@ -89,41 +97,32 @@
 		}
 }
 
-.photographer__tagline2 {
-	padding-right: 130px;
-}
-
 .tagLinksNav2 {
+  padding-top: 8px;
+  
 	@include breakpoint-down(small) {
 		padding-top: 0px;
-		padding-right: 125px;
 	}
 }
 
 .photographer__contact {
     position: absolute;
-    left: 300px;
+    left: calc(50% - 58.66px);
     top: 75px;
 
     @include breakpoint-down(large) {
        top: calc(100vh - 160px);
-       left: calc(50% - 160px);
+       left: calc(50% - 76.66px);
        padding: 8px 30px; 
     }
-
-    @include breakpoint-down(medium) {
-        left: calc(50% - 120px);
-     }
-
      @include breakpoint-down(small) {
-        top: calc(100vh - 130px);
-        left: calc(50% - 100px);
+        top: calc(100vh - 145px);
      }
 }
 
 .photographer__circleimg2 {
 	position: absolute;
-  right: 190px;
+  right: 30px;
 	top: 50%;
   transform: translateY(-50%);
 	width: 135px;
@@ -135,13 +134,13 @@
 	@include breakpoint-down(medium) {
 		width: 115px;
 		height: 115px;
-		right: 100px;
+		right: 20px;
 }
 
 	@include breakpoint-down(small) {
 		width: 90px;
 		height: 90px;
-		right: 40px;
+		right: 0px;
 }
 }
 
@@ -158,16 +157,16 @@
     border-top-right-radius: 5px;
     position: absolute;
     top: calc(100vh - 108px);
-    right: 100px;
+    right: -30px;
 
     @include breakpoint-down(medium) {
-        right: 60px;
+        right: -20px;
     }
 
     @include breakpoint-down(small) {
-        top: calc(100vh - 90px);
+        top: calc(100vh - 100px);
         padding: 3px 20px 0px 20px;
-        right: 30px;
+        right: -10px;
     }
 
     p {
@@ -199,28 +198,11 @@
 
 
   &__label {
-    padding-top: 278px;  
     display: inline-block;
     color: #000;
     font-size: .8em;
     font-weight: $font-bold;
     padding-right: 15px;
-
-    @include breakpoint-down(medium) {
-      padding-top: 243px;
-    }
-
-    @include breakpoint-down(small) {
-      padding-top: 150px;
-    }
-
-    @media only screen and (max-width: 385px) {
-      padding-top: 175px;
-    }
-
-    @media only screen and (max-width: 305px) {
-      padding-top: 190px;
-    }
   }
 
   &-toggle {
