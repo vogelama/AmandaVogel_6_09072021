@@ -7,11 +7,17 @@ const myScrollFunc = () => {
     let y = window.scrollY;
     if (y >= 300) {
         //link shows if you are more than 300px from top of page
-        goToTop.className = "topOfPageLink showLink"
+        goToTop.className = "topOfPageLink showLink";
     } else {
         //link is hidden if you are less than 300px from top of page
-        goToTop.className = "topOfPageLink hideLink"
+        goToTop.className = "topOfPageLink hideLink";
     }
+
+    const url = new URL(window.location);
+    url.hash = '';
+    history.replaceState(null, document.title, url);
+
+    window.reload();
 };
 
 window.addEventListener("scroll", myScrollFunc);

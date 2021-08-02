@@ -79,9 +79,12 @@ window.addEventListener('hashchange', () => {
     removeActiveLinks(tagsNav);
     findTextContentInArray(tagsNav, window.location.hash);
     console.log(hash)
+
+    // const url = new URL(window.location);
+    // url.hash = '';
+    // history.replaceState(null, document.title, url);
 }) 
 
-// clickOnTags();
 /////////////////////////////////////////////////////////////////////////////////////////
 
 

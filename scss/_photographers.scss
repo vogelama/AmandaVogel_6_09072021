@@ -50,7 +50,6 @@
 
         @include breakpoint-down(small) {
             padding-top: 10px;
-            padding-bottom: 10px;
             top: 66px;
         }
     }
@@ -151,12 +150,13 @@
     display: block;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     width: 250px;
     padding: 8px 20px 0px 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     position: absolute;
-    top: calc(100vh - 108px);
+    top: calc(100vh - 112px);
     right: -30px;
 
     @include breakpoint-down(medium) {
@@ -164,7 +164,7 @@
     }
 
     @include breakpoint-down(small) {
-        top: calc(100vh - 100px);
+        top: calc(100vh - 90px);
         padding: 3px 20px 0px 20px;
         right: -10px;
     }

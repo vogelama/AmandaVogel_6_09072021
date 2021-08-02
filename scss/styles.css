@@ -310,7 +310,6 @@ p {
 @media (max-width: 31.1875em) {
   .main__info {
     padding-top: 10px;
-    padding-bottom: 10px;
     top: 66px;
   }
 }
@@ -436,12 +435,15 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 250px;
   padding: 8px 20px 0px 20px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   position: absolute;
-  top: calc(100vh - 108px);
+  top: calc(100vh - 112px);
   right: -30px;
 }
 
@@ -453,7 +455,7 @@ p {
 
 @media (max-width: 31.1875em) {
   .likes-and-price {
-    top: calc(100vh - 100px);
+    top: calc(100vh - 90px);
     padding: 3px 20px 0px 20px;
     right: -10px;
   }
