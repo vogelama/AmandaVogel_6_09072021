@@ -181,11 +181,16 @@
     i {
         color: #000;
         font-size: 1em;
+        padding-left: 5px;
 
         @include breakpoint-down(small) {
             font-size: .75em;
         }
     }
+}
+
+.heart-and-likes {
+  display: flex;
 }
 
 // Dropdown Menu 
@@ -294,6 +299,7 @@
         width: 30.8%;
         margin-bottom: 20px;
         overflow-x: hidden;
+        cursor: pointer;
 
         @include breakpoint-down(large) {
             width: 47.2%;
@@ -331,6 +337,22 @@
     }
 }
 
+.likes-container {
+  display: flex;
+  color: $primaryDarkClr;
+  cursor: pointer;
+}
+
+.like-counter {
+  color: $primaryDarkClr;
+  padding-left: 5px;
+
+  &:hover {
+    color: $primaryLightClr;
+  }
+}
+
+
 img {
 	width: 100%;
 }
@@ -340,6 +362,8 @@ video {
         width: 100vw;
     }
 }
+
+
 
 // Contact Form Modal 
   
@@ -459,7 +483,7 @@ video {
     left: 15px;
     content: " ";
     height: 33px;
-    width: 3px;
+    width: 5px;
     background-color: #fff;
   }
 
@@ -564,5 +588,127 @@ video {
     }
   }
 
-  // End Modal Form 
 
+  // Lightbox modal
+  
+  .lbBackground {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #fff;
+    // display: none;
+  }
+
+  .lbContent {
+    margin: 5vh auto;
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    text-align: left;
+    display: flex;
+
+    @include breakpoint-down(large) {
+      margin: 10vh auto;
+      height: 80vh;
+    }
+
+    @include breakpoint-down(medium) {
+      margin: 15vh auto;
+      height: 70vh;
+    }
+
+    @include breakpoint-down(small) {
+      margin: 22vh auto;
+      height: 60vh;
+    }
+  }
+
+  .slide {
+    margin: 8vh auto;
+    width: 70vw;
+    height: 75vh;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint-down(large) {
+      margin: 8vh auto;
+      height: 65vh;
+    }
+
+    @include breakpoint-down(medium) {
+      margin: 8vh auto;
+      height: 55vh;
+    }
+
+    @include breakpoint-down(small) {
+      margin: 10vh auto;
+      height: 40vh;
+      width: 75vw;
+    }
+
+    &__photo {
+      border-radius: 5px;
+      height: calc(100% - 25px);
+      object-fit: cover;
+    }
+  }
+
+  .arrow {
+    color: $primaryDarkClr;
+    font-size: 1.5em;
+    position: absolute;
+    top: 45%;
+  }
+
+  .left {
+    left: 120px;
+
+    @include breakpoint-down(large) {
+      left: 40px;
+    }
+
+    @include breakpoint-down(medium) {
+      left: 15px;
+    }
+
+    @include breakpoint-down(small) {
+      left: 10px;
+    }
+  }
+
+  .right {
+    right: 120px;
+
+    @include breakpoint-down(large) {
+      right: 40px;
+    }
+
+    @include breakpoint-down(medium) {
+      right: 15px;
+    }
+
+    @include breakpoint-down(small) {
+      right: 10px;
+    }
+  }
+
+  .lb-close {
+    top: 50px;
+    right: 50px;
+
+    // @include breakpoint-down(small) {
+    //   top: 50px;
+    //   right: 50px;
+    // }
+  }
+
+  .lb-close:before,
+  .lb-close:after {
+    background-color: $primaryDarkClr;
+  }

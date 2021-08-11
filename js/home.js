@@ -40,7 +40,7 @@ const displayLink = (photographer, section) => {
 const displayImage = (photographer, link) => {
     const image = document.createElement('img');
     image.classList.add('photographer__circleimg');
-    image.src = `img/Photographers_ID_Photos/${photographer.portrait}`;
+    image.src = `img2/Photographers_ID_Photos/${photographer.portrait}`;
     link.appendChild(image);
 }
 // h2 element (name)
