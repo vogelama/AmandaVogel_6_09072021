@@ -51,20 +51,67 @@ function DropDown(dropDown) {
         }
       }
   }
-  
+
+
+
+window.data
+.then(data => { 
+  // console.log(window.mediaArray);
   // change to new menu items when clicked on and logs in console 
   const dropDown = new DropDown(document.querySelector('.dropdown'));
-    
-  dropDown.element.addEventListener('change', e => {
-    console.log('changed', dropDown.value);
+  dropDown.element.addEventListener('change', () => {
+  console.log(dropDown.value);
+
+    if (dropDown.value == 'Date'){
+      sortByDate();
+    }
+    if (dropDown.value == 'Popularité'){
+      sortByLikes();
+    }
+    if (dropDown.value == 'Titre'){
+      sortByAlphabet();
+    }
   });
+
+
+
+
+// SORT IMAGES BY DATE
+ const sortByDate = () => {
+  const data = window.mediaArray.slice();
+  data.sort((a, b) => {
+     return a.date < b.date ? 1 : -1;
+  })
+  window.createList(data);  
+}
+
+
+
+// SORT IMAGES BY LIKES
+const sortByLikes = () => {
+  const data = window.mediaArray.slice();
+  data.sort((a,b) => {
+    return b.likes - a.likes;
+  })
+  window.createList(data);
+}
+
+
+
+// SORT IMAGES BY TITLE
+const sortByAlphabet = () => {
+  const data = window.mediaArray.slice();
+  data.sort((a,b) => {
+    return a.title > b.title ? 1 : -1;
+  })
+  window.createList(data);
+}
+
+
+dropDown.toggle('');
+
+})
+
+
+
   
-  dropDown.element.addEventListener('opened', e => {
-    console.log('opened', dropDown.value);
-  });
-  
-  dropDown.element.addEventListener('closed', e => {
-    console.log('closed', dropDown.value);
-  });
-  
-  dropDown.toggle(e);

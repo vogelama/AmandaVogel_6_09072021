@@ -590,6 +590,14 @@ video {
 
 
   // Lightbox modal
+  button {
+    border: none;
+    background-color: #fff;
+
+    &:disabled {
+      opacity: .2;
+    }
+  }
   
   .lbBackground {
     position: fixed;
@@ -598,9 +606,9 @@ video {
     top: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: #fff;
-    // display: none;
+    display: none;
   }
 
   .lbContent {
@@ -611,7 +619,8 @@ video {
     position: relative;
     color: #fff;
     text-align: left;
-    display: flex;
+    // display: flex;
+
 
     @include breakpoint-down(large) {
       margin: 10vh auto;
@@ -634,7 +643,11 @@ video {
     width: 70vw;
     height: 75vh;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    left: 15vw;
+    display: none;
+
+    
 
     @include breakpoint-down(large) {
       margin: 8vh auto;
@@ -653,59 +666,82 @@ video {
     }
 
     &__photo {
+      z-index: 99999999;
       border-radius: 5px;
       height: calc(100% - 25px);
       object-fit: cover;
     }
   }
 
+  .active{
+    opacity: 1;
+  }
+
   .arrow {
     color: $primaryDarkClr;
     font-size: 1.5em;
     position: absolute;
-    top: 45%;
+    top: 48%;
   }
 
   .left {
-    left: 120px;
+    left: 10%;
 
-    @include breakpoint-down(large) {
-      left: 40px;
+    &:disabled {
+      opacity: .4;
+      color: white;
     }
 
-    @include breakpoint-down(medium) {
-      left: 15px;
+    @include breakpoint-down(large) {
+      left: 9%;
     }
 
     @include breakpoint-down(small) {
-      left: 10px;
+      left: 5%;
     }
   }
 
   .right {
-    right: 120px;
+    right: 10%;
 
-    @include breakpoint-down(large) {
-      right: 40px;
+    &:disabled {
+      opacity: .4;
     }
 
-    @include breakpoint-down(medium) {
-      right: 15px;
+    @include breakpoint-down(large) {
+      right: 9%;
     }
 
     @include breakpoint-down(small) {
-      right: 10px;
+      right: 5%;
     }
   }
 
-  .lb-close {
-    top: 50px;
-    right: 50px;
+  .hide {
+    display: none;
+  }
 
-    // @include breakpoint-down(small) {
-    //   top: 50px;
-    //   right: 50px;
-    // }
+  .show {
+    display: block;
+  }
+
+  .lb-close {
+    top: 13%;
+    right: 10%;
+
+    @include breakpoint-down(large) {
+      top: 18%;
+      right: 9%;
+    }
+
+    @include breakpoint-down(medium) {
+      top: 22.5%;
+    }
+
+    @include breakpoint-down(small) {
+      top: 31.5%;
+      right: 3.5%;
+    }
   }
 
   .lb-close:before,

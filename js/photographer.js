@@ -1,7 +1,10 @@
+
+
 // PHOTOGRAPHERS PAGE HEADER INFO  
 
-fetch("FishEyeData.json")
-    .then(response => response.json())
+window.data = fetch("FishEyeData.json").then(response => response.json()); //the promise
+
+window.data
     .then(data => {
         // targeting the main class 
         const section = document.querySelector('.main__info');
@@ -40,7 +43,6 @@ const getPhotographerId = () => {
 const url = new URL(window.location);
 url.hash = getPhotographerId();
 history.replaceState(null, document.title, url);
-// //**** NOT WORKING ONLY WORKS FOR THAT PHOTOGRAPHER
 /////////////////////////////////////////////////////////
 
 const displayHeader = (photographer, section) => {
@@ -99,34 +101,108 @@ const displayImage = (photographer, section) => {
 
 ////////////////////////////////////////////////////////////////////////////////////
 
+var currentIndex = 0;
+var newIndex = 0;
 
-// PHOTOGRAPHERS PAGE MEDIA INFO  
-fetch("FishEyeData.json")
-    .then(response => response.json())
+// PULLING DATA FROM JSON FILE ONTO PHOTOGRAPHERS PAGE FOR IMAGES  
+window.data
     .then(data => {
         // targeting the portfolio section 
-        const section = document.querySelector('.portfolio__row');
         const mediaId = getPhotographerId();
         const mediaArray = data.media.filter(media => media.photographerId == mediaId);
-        
-            displaySlidesBackground(section, mediaArray);
-
-        for (const media of mediaArray) {
-            const person = displayPortfolio(media, section);
-            displayPhoto(media, person);
-            displayImageInfo(media, person);
-            displayDate(media, person);
-            displayPhotoPrice(media, person);
-
-            const btnsHeart = person.querySelector('.like-counter');
-            btnsHeart.addEventListener('click', () => {
-                media.likes++;
-                person.querySelector('.number-likes').innerHTML = media.likes;}, 
-                { once: true });
-        }
-
+        window.mediaArray = mediaArray; //storing current photographer media 
+        window.createList(mediaArray);
     });
 
+window.createList = function(mediaArray) {
+    const section = document.querySelector('.portfolio__row');
+    section.innerHTML = '';
+
+    for (let i = 0; i < mediaArray.length; i++) {
+
+        const person = displayPortfolio(mediaArray[i], section);
+        displayPhoto(mediaArray[i], person, i);
+        displayImageInfo(mediaArray[i], person);
+        displayDate(mediaArray[i], person);
+        displayPhotoPrice(mediaArray[i], person);
+        countLikeButton(mediaArray[i], person);
+
+        person.querySelector('.portfolio__image').addEventListener('click', (e) => {
+            openLightbox();
+            currentIndex = e.target.getAttribute('data-index');
+            console.log(currentIndex);
+
+            // const img = document.querySelector('.slide__photo');
+            // const title = document.querySelector('.slide__title');
+            // img.src = person.querySelector('.portfolio__image').src;
+            // title.textContent = person.querySelector('.portfolio__image-title').textContent;
+        })
+    };
+        displaySlidesBackground(section, mediaArray);
+}
+
+
+// CODE TO OPEN LIGHTBOX 
+
+function openLightbox() {
+    document.querySelector(".lbBackground").style.display = "block";
+    document.querySelector(".slide").style.display = "block";
+    document.querySelector('.left').style.display = "none";
+}
+    
+function closeLightbox() {
+    document.querySelector(".lbBackground").style.display = "none";
+    window.location.reload();
+
+}  
+
+function navigateSlider() {
+    var slides = document.getElementsByClassName("slide");
+    var left = document.getElementsByClassName("left");
+    var right = document.getElementsByClassName("right");
+    var slidesLength = slides.length;
+
+   if (newIndex === -1) newIndex = 0; 
+   if (newIndex === slidesLength) newIndex = slidesLength -1;
+    
+  if (newIndex === 0) {
+      left.disabled = true;
+      document.querySelector('.left').style.display = "none";
+  } else {
+      left.disabled = false;
+      document.querySelector('.left').style.display = "block";
+  }
+
+  if (newIndex === slidesLength -1) {
+    right.disabled = true;
+    document.querySelector('.right').style.display = "none";
+    } else {
+        right.disabled = false;
+        document.querySelector('.right').style.display = "block";
+    }
+  
+   slides[currentIndex].style.display = "none";
+   slides[newIndex].style.display = "block";
+   
+   currentIndex = newIndex;
+}
+
+function leftArrow() {
+   newIndex--;
+   navigateSlider();
+}
+
+function rightArrow() {
+   newIndex++;
+   navigateSlider();
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+// DOM FOR IMAGES ON PHOTOGRAPHERS PAGE
+     
 const displayPortfolio = (media, section) => {
     const person = document.createElement('div');
     person.classList.add('portfolio__column');
@@ -139,16 +215,18 @@ const displayPortfolio = (media, section) => {
     return person
 }
 
-const displayPhoto = (media, section) => {
+const displayPhoto = (media, section, index) => {
     if (media.image) {
         const photo = document.createElement('img');
         photo.classList.add('portfolio__image');
         photo.src = `img2/${media.image}`;
+        photo.setAttribute('data-index', index);
         section.appendChild(photo);
     } else {
         const video = document.createElement('video');
         video.classList.add('portfolio__image');
         video.src = `img2/${media.video}`;
+        video.setAttribute('data-index', index);
         section.appendChild(video);
     }
 };
@@ -177,8 +255,9 @@ const displayLikesContainer = (media, info) => {
     displayHeartContainer(media, likesContainer);
 
     likesContainer.addEventListener('click', () => {
-        document.querySelector('.photographer__likes').innerHTML = totalLikes++;
-    })
+        document.querySelector('.photographer__likes').innerHTML = 1 + totalLikes++;
+    }
+        ,{ once: true });
 }
 
 const displayLikes = (media, likesContainer) => {
@@ -194,10 +273,10 @@ const displayHeartContainer = (media, likesContainer) => {
     const link = document.createElement('span');
     link.classList.add('like-counter');
     likesContainer.appendChild(link);
-    displayIcon(media, link);
+    displayIcon(link);
 }
 
-const displayIcon = (media, link) => {
+const displayIcon = (link) => {
     const icon = document.createElement('i');
     icon.classList.add('fa');
     icon.classList.add('fa-heart');
@@ -219,24 +298,36 @@ const displayPhotoPrice = (media, section) => {
     section.appendChild(price);
 }
 
-// DOM for lightbox 
+const countLikeButton = (media, person) => {
+    const btnsHeart = person.querySelector('.like-counter');
+    btnsHeart.addEventListener('click', () => {
+        media.likes++;
+        person.querySelector('.number-likes').innerHTML = media.likes;
+    },
+        { once: true });
+}
+
+
+// DOM FOR LIGHTBOX
+
 
 const displaySlidesBackground = (section, mediaArray) => {
     const slides = document.createElement('div');
     slides.classList.add('lbBackground');
+    // slides.style.overflow = "hidden";
     section.appendChild(slides);
 
     const content = document.createElement('div');
     content.classList.add('lbContent');
     content.style.width = `${mediaArray.length * 100}vw`;
-
     slides.appendChild(content);
 
     displaySlidesContent(mediaArray, content);
     displayClose(slides);
-    displayArrLeft(slides, content);
-    displayArrRight(slides, content);
+    displayArrLeft(slides);
+    displayArrRight(slides);
 
+    // arrowFunction();
 }
 
 const displaySlidesContent = (mediaArray, content) => {
@@ -278,17 +369,16 @@ const displayClose = (content) => {
     const closeSlide = document.createElement('span');
     closeSlide.classList.add('close');
     closeSlide.classList.add('lb-close');
-    closeSlide.addEventListener('click', () => {
-        document.querySelector(".lbBackground").style.display = "none";
-    })
+    closeSlide.addEventListener("click", closeLightbox);
     content.appendChild(closeSlide);
 }
 
-const displayArrLeft = (content) => {
-    const arrLeft = document.createElement('span');
+const displayArrLeft = (slides) => {
+    const arrLeft = document.createElement('button');
     arrLeft.classList.add('arrow');
     arrLeft.classList.add('left');
-    content.appendChild(arrLeft);
+    arrLeft.addEventListener("click", leftArrow);
+    slides.appendChild(arrLeft);
     displayLeftIcon(arrLeft);
 }
 
@@ -299,16 +389,13 @@ const displayLeftIcon = (arrLeft) => {
     arrLeft.appendChild(left);
 }
 
-const displayArrRight = (slides, content) => {
-    const arrRight = document.createElement('span');
+const displayArrRight = (slides) => {
+    const arrRight = document.createElement('button');
     arrRight.classList.add('arrow');
     arrRight.classList.add('right');
+    arrRight.addEventListener("click", rightArrow);
     slides.appendChild(arrRight);
     displayRightIcon(arrRight);
-    arrRight.addEventListener("click", () => {
-        console.log("arrRight");
-        content.style.transform = "translateX(" + (-100) + "vw)"
-    })
 }
 
 const displayRightIcon = (arrRight) => {
@@ -319,18 +406,5 @@ const displayRightIcon = (arrRight) => {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////
 

@@ -914,6 +914,15 @@ textarea {
   color: #fff;
 }
 
+button {
+  border: none;
+  background-color: #fff;
+}
+
+button:disabled {
+  opacity: .2;
+}
+
 .lbBackground {
   position: fixed;
   z-index: 999;
@@ -921,8 +930,9 @@ textarea {
   top: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: #fff;
+  display: none;
 }
 
 .lbContent {
@@ -933,9 +943,6 @@ textarea {
   position: relative;
   color: #fff;
   text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 @media (max-width: 59.3125em) {
@@ -964,7 +971,9 @@ textarea {
   width: 70vw;
   height: 75vh;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  left: 15vw;
+  display: none;
 }
 
 @media (max-width: 59.3125em) {
@@ -990,67 +999,95 @@ textarea {
 }
 
 .slide__photo {
+  z-index: 99999999;
   border-radius: 5px;
   height: calc(100% - 25px);
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+.active {
+  opacity: 1;
+}
+
 .arrow {
   color: #901C1C;
   font-size: 1.5em;
   position: absolute;
-  top: 45%;
+  top: 48%;
 }
 
 .left {
-  left: 70px;
+  left: 10%;
+}
+
+.left:disabled {
+  opacity: .4;
+  color: white;
 }
 
 @media (max-width: 59.3125em) {
   .left {
-    left: 40px;
-  }
-}
-
-@media (max-width: 43.6875em) {
-  .left {
-    left: 15px;
+    left: 9%;
   }
 }
 
 @media (max-width: 31.1875em) {
   .left {
-    left: 10px;
+    left: 5%;
   }
 }
 
 .right {
-  right: 70px;
+  right: 10%;
+}
+
+.right:disabled {
+  opacity: .4;
 }
 
 @media (max-width: 59.3125em) {
   .right {
-    right: 40px;
-  }
-}
-
-@media (max-width: 43.6875em) {
-  .right {
-    right: 15px;
+    right: 9%;
   }
 }
 
 @media (max-width: 31.1875em) {
   .right {
-    right: 10px;
+    right: 5%;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.lb-close {
+  top: 13%;
+  right: 10%;
+}
+
+@media (max-width: 59.3125em) {
+  .lb-close {
+    top: 18%;
+    right: 9%;
+  }
+}
+
+@media (max-width: 43.6875em) {
+  .lb-close {
+    top: 22.5%;
   }
 }
 
 @media (max-width: 31.1875em) {
   .lb-close {
-    top: 50px;
-    right: 50px;
+    top: 31.5%;
+    right: 3.5%;
   }
 }
 

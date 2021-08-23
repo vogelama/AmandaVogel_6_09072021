@@ -24,19 +24,7 @@
 
 		<main class="main__photographer">
 			<section class="main__info">
-				<!-- <div class="main__infobg">
-					<h1 id="photographer__name-1" class="photographer__name photographer__name2">Mimi Keel</h1>
-					<p id="photographer__city-1" class="photographer__city photographer__city2">London, UK</p>					
-					<p id="photographer__tagline-1" class="photographer__tagline photographer__tagline2">Voir le beau dans le quotidien</p>
-					<div class="tagLinks tagLinksNav tagLinksNav2" id="navlinks" aria-label="photographer categories" role="navigation">
-						<a href="#" class="tagLink portrait" aria-label="Link to portrait images">#portrait</a>
-						<a href="#" class="tagLink events" aria-label="Link to event images">#events</a>
-						<a href="#" class="tagLink travel" aria-label="Link to travel images">#travel</a>
-						<a href="#" class="tagLink animals" aria-label="Link to animal images">#animals</a>
-					</div> -->
-					<button class="button photographer__contact modal-btn">Contactez-moi</button>
-					<!-- <img src="img/Photographers_ID_Photos/MimiKeel.jpg" class="photographer__circleimg photographer__circleimg2" alt="Mimi Keel">
-				</div> -->
+				<button class="button photographer__contact modal-btn">Contactez-moi</button>
 				<div class="likes-and-price">
 					<div class="heart-and-likes">
 						<p class="photographer__likes"></p>
@@ -124,179 +112,20 @@
 			<div class="dropdown">
 				<button class="dropdown-toggle" type="button" aria-haspopup="true">-Sélectionnez-</button>
 				<ul class="dropdown-menu" role="listbox" aria-expanded="false">
-					<li role="option" tabindex="0">Popularité</li>
-					<li role="option" tabindex="0">Date</li>
-					<li role="option" tabindex="0">Titre</li>
+					<li role="option" tabindex="0" class="popularity">Popularité</li>
+					<li role="option" tabindex="0" class="date">Date</li>
+					<li role="option" tabindex="0" class="title">Titre</li>
 				</ul>
 			</div>
 
-			<section class="portfolio__row">
-				<!-- <div class="portfolio__column photographer travel">
-					<img class="portfolio__image" src="img/Mimi/Travel_Lonesome.jpg" alt="Lonesome Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-1" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-1">88
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart">
-									<i class="fa fa-heart" aria-hidden="true"></i><
-								/span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-1" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-1" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer travel">
-					<img class="portfolio__image" src="img/Mimi/Travel_HillsideColor.jpg" alt="Hillside Color Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-2" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-2">85
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-2" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-2" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer portrait">
-					<img class="portfolio__image" src="img/Mimi/Portrait_Wednesday.jpg" alt="Wednesday Portrait Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-3" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-3">34
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-3" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-3" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer portrait">
-					<img class="portfolio__image" src="img/Mimi/Portrait_Nora.jpg" alt="Nora Portrait Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-4" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-4">63
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-4" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-4" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer portrait">
-					<img class="portfolio__image" src="img/Mimi/Portrait_Background.jpg" alt="Raw Black Portrait Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-5" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-5">55
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-5" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-5" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer events">
-					<img class="portfolio__image" src="img/Mimi/Event_SeasideWedding.jpg" alt="Seaside Wedding Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-6" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-6">25
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-6" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-6" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer events">
-					<img class="portfolio__image" src="img/Mimi/Event_PintoWedding.jpg" alt="Boulder Wedding Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-7" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-7">52
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-7" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-7" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer events">
-					<img class="portfolio__image" src="img/Mimi/Event_BenevidesWedding.jpg" alt="Benevides Wedding Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-8" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-8">77
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-8" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-8" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer animals">
-					<video class="portfolio__image" poster="img/Mimi/Animals_Wild_Horses_in_the_mountains.jpg" controls>
-						<source src="img/Mimi/Animals_Wild_Horses_in_the_mountains.mp4" type="video/mp4"></video>
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-9" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-9">142
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-9" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-9" class="portfolio__image-price"></p>
-				</div>
-
-				<div class="portfolio__column photographer animals">
-					<img class="portfolio__image" src="img/Mimi/Animals_Rainbow.jpg" alt="Rainbow Bird Photo">
-					<div class="portfolio__image-info">
-						<p id="portfolio__image-title1-10" class="portfolio__image-title"></p>
-						<p id="portfolio__image-likes1-10">59
-							<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
-								<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
-							</a>
-						</p>
-					</div>
-					<p id="portfolio__image-date1-10" class="portfolio__image-date"></p>
-					<p id="portfolio__image-price1-10" class="portfolio__image-price"></p>
-				</div> -->
-
-				<!-- <div class="lbBackground">
-					<div class="lbContent">
-						<div class="slide">
-							<img class="slide__photo" src="img2/Travel_Lonesome.jpg">
-							<p class="slide__title">Lonesome</p>
-						</div>
-
-						<span class="close lb-close"></span>
-						<span class="arrow left"><i class="fas fa-chevron-left"></i></span>
-						<span class="arrow right"><i class="fas fa-chevron-right"></i></span>
-					</div>
-				</div> -->
-			</section>
-
-			
+			<section class="portfolio__row"></section>
 
 		</main>
 
 		<script src="js/photographer.js"></script>
-		<script src="js/filter_hastags.js"></script>
 		<script src="js/sort_dropdown-menu.js"></script>
+		<script src="js/filter_hastags.js"></script>
 		<script src="js/contact-form.js"></script>
-		<script src="js/lightbox.js"></script>
 
   </body>
 </html>
