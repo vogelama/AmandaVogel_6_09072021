@@ -19,46 +19,28 @@
   <body>
 	
 	<header class="header">
-		<a href="#topOfPage" class="topOfPageLink hideLink" id="top" title="Aller en haut">Aller en haut</a>
+		<a href="#topOfPage" class="topOfPageLink hideLink" id="top" title="Aller en haut" tabindex="1">Aller en haut</a>
 		
 		<section class="header__logo-and-nav">
-			<a href="index.html" class="header__logo"><img src="img/fisheyelogo.png" alt="Fisheye Home page"></a>
-			<nav class="tagLinks tagLinksNav" id="navlinks" aria-label="photographer categories" role="navigation">
-				<a href="#all" class="tagLink active" aria-label="Link to all photographers">tous</a>
-				<a href="#portrait" class="tagLink" aria-label="Link to portrait photographers">#portrait</a>
-				<a href="#art" class="tagLink" aria-label="Link to art photographers">#art</a>
-				<a href="#fashion" class="tagLink" aria-label="Link to fashion photographers">#fashion</a>
-				<a href="#architecture" class="tagLink" aria-label="Link to architecture photographers">#architecture</a>
-				<a href="#travel" class="tagLink" aria-label="Link to travel photographers">#travel</a>
-				<a href="#sports" class="tagLink" aria-label="Link to sports photographers">#sports</a>
-				<a href="#animals" class="tagLink" aria-label="Link to animal photographers">#animals</a>
-				<a href="#events" class="tagLink" aria-label="Link to event photographers">#events</a>
+			<a href="index.html" class="header__logo" tabindex="1"><img src="img/fisheyelogo.png" alt="Fisheye Home page"></a>
+			<nav class="tagLinks tagLinksNav" id="navlinks" aria-label="photographer categories" role="navigation" tabindex="2">
+				<a href="#all" class="tagLink active" aria-label="Link to all photographers" tabindex="2">tous</a>
+				<a href="#portrait" class="tagLink" aria-label="Link to portrait photographers" tabindex="2">#portrait</a>
+				<a href="#art" class="tagLink" aria-label="Link to art photographers" tabindex="2">#art</a>
+				<a href="#fashion" class="tagLink" aria-label="Link to fashion photographers" tabindex="2">#fashion</a>
+				<a href="#architecture" class="tagLink" aria-label="Link to architecture photographers" tabindex="2">#architecture</a>
+				<a href="#travel" class="tagLink" aria-label="Link to travel photographers" tabindex="2">#travel</a>
+				<a href="#sports" class="tagLink" aria-label="Link to sports photographers" tabindex="2">#sports</a>
+				<a href="#animals" class="tagLink" aria-label="Link to animal photographers" tabindex="2">#animals</a>
+				<a href="#events" class="tagLink" aria-label="Link to event photographers" tabindex="2">#events</a>
 			</nav>
 		</section>
 	</header>
 
 	<main class="main">
-		<h1 class="photographers__title">Nos photographes</h1>
+		<h1 class="photographers__title" tabindex="3">Nos photographes</h1>
 
-		<section class="photographers">
-
-			<!-- <section class="photographer portrait events travel animals">
-				<a href="photographer_Mimi-Keel.html">
-					<img src="img/Photographers_ID_Photos/MimiKeel.jpg" class="photographer__circleimg" alt="Mimi Keel">
-					<h2 id="photographer__name-1" class="photographer__name">Mimi Keel</h2>
-				</a>
-				<p id="photographer__city-1" class="photographer__city">London, UK</p>
-				<p id="photographer__tagline-1" class="photographer__tagline">Voir le beau dans le quotidien</p>
-				<p id="photographer__price-1" class="photographer__price">400€/jour</p>
-				<div class="tagLinks">
-					<a href="#" id="photographer__tags1-1" class="tagLink portrait" aria-label="Link to other portrait photographers">portrait</a>
-					<a href="#" id="photographer__tags2-1" class="tagLink events" aria-label="Link to other event photographers">events</a>
-					<a href="#" id="photographer__tags3-1" class="tagLink travel" aria-label="Link to other travel photographers">travel</a>
-					<a href="#" id="photographer__tags4-1" class="tagLink animals" aria-label="Link to other animal photographers">animals</a>
-				</div>
-			</section> -->
-
-		</section>
+		<section class="photographers"></section>
 	</main>
 
 	<script src="js/home.js"></script>

@@ -14,6 +14,12 @@ body {
     text-align: center;
 }
 
+*[tabindex]:focus {
+    outline: 3px blue solid;
+    outline-offset: -3px;
+    border: none;
+  }
+
 a {
     display: inline-block;
     text-decoration: none;

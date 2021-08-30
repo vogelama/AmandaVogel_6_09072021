@@ -1,8 +1,11 @@
 // BUTTON TO SCROLL TO TOP OF PAGE 
 
-const myScrollFunc = () => {
-    // target the link to take you to the top of the page
-    const goToTop = document.getElementById("top");
+// target the link to take you to the top of the page
+const goToTop = document.getElementById("top");
+
+const myScrollFunc = (e) => {
+    // // target the link to take you to the top of the page
+    // const goToTop = document.getElementById("top");
 
     let y = window.scrollY;
     if (y >= 300) {
@@ -16,11 +19,14 @@ const myScrollFunc = () => {
     const url = new URL(window.location);
     url.hash = '';
     history.replaceState(null, document.title, url);
-
-    window.reload();
 };
 
 window.addEventListener("scroll", myScrollFunc);
+goToTop.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        window.scrollTo(0, 0);
+    }
+})
 /////////////////////////////////////////////////////////////////////////////////////////
 
 

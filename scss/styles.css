@@ -13,6 +13,12 @@ body {
   text-align: center;
 }
 
+*[tabindex]:focus {
+  outline: 3px blue solid;
+  outline-offset: -3px;
+  border: none;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
@@ -63,7 +69,7 @@ p {
   z-index: 999;
 }
 
-.topOfPageLink:hover, .topOfPageLink :focus {
+.topOfPageLink:hover {
   background-color: #db8876;
   color: #000;
 }
@@ -243,7 +249,7 @@ p {
   font-size: .75em;
 }
 
-.tagLink:hover, .tagLink :focus, .tagLink :active, .tagLink :target {
+.tagLink:hover, .tagLink :active, .tagLink :target {
   background-color: #901C1C;
   color: #fff;
   border: 0.5px solid #901C1C;

@@ -16,6 +16,7 @@ fetch("FishEyeData.json")
         }
     });
 
+// each photographer's section 
 const displayPerson = (photographer, section) => {
     const person = document.createElement('section');
     person.classList.add('photographer');
@@ -32,6 +33,7 @@ const displayLink = (photographer, section) => {
     const link = document.createElement('a');
     photographerName = photographer.name.replace(/\s/g , "-");
     link.href = `photographer.html#${photographer.id}`; 
+    link.tabIndex = "4";
     section.appendChild(link);
     displayImage(photographer, link); 
     displayName(photographer, link);
@@ -41,6 +43,7 @@ const displayImage = (photographer, link) => {
     const image = document.createElement('img');
     image.classList.add('photographer__circleimg');
     image.src = `img2/Photographers_ID_Photos/${photographer.portrait}`;
+    image.alt = `${photographer.name}`;
     link.appendChild(image);
 }
 // h2 element (name)
@@ -56,6 +59,7 @@ const displayCity = (photographer, section) => {
     const city = document.createElement('p');
     city.classList.add('photographer__city');
     city.textContent = `${photographer.city}, ${photographer.country}`;
+    city.tabIndex = "4";
     section.appendChild(city);
 }
 
@@ -64,6 +68,7 @@ const displayTagline = (photographer, section) => {
     const tagline = document.createElement('p');
     tagline.classList.add('photographer__tagline');
     tagline.textContent = `${photographer.tagline}`;
+    tagline.tabIndex = "4";
     section.appendChild(tagline);
 }
 
@@ -72,6 +77,7 @@ const displayPrice = (photographer, section) => {
     const price = document.createElement('p');
     price.classList.add('photographer__price');
     price.textContent = `${photographer.price}€/jour`;
+    price.tabIndex = "4";
     section.appendChild(price);
 }
 
@@ -85,6 +91,7 @@ const displayTags = (photographer, section) => {
         link.classList.add('tagLink');
         link.href = `#${tag}`;
         link.textContent = `#${tag}`;
+        link.tabIndex = "4";
         tags.appendChild(link);
     }
 }

@@ -19,16 +19,16 @@
   <body>
 
 		<header class="header__photographer">
-			<a href="index.html" class="header__logo"><img src="img/fisheyelogo.png" alt="Fisheye Home page"></a>
+			<a href="index.html" class="header__logo" tabindex="1"><img src="img/fisheyelogo.png" alt="Fisheye Home page"></a>
 		</header>
 
 		<main class="main__photographer">
 			<section class="main__info">
-				<button class="button photographer__contact modal-btn">Contactez-moi</button>
-				<div class="likes-and-price">
+				<button class="button photographer__contact modal-btn" tabindex="5">Contactez-moi</button>
+				<div class="likes-and-price" tabindex="7">
 					<div class="heart-and-likes">
 						<p class="photographer__likes"></p>
-						<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0">
+						<a href="#" title="Love it" class="btn-counter multiple-count" data-count="0" tabindex="-1">
 							<span id="heart"><i class="fa fa-heart" aria-hidden="true"></i></span>
 						</a>
 					</div>
@@ -38,7 +38,7 @@
 
 			<section class="bground">
 				<div class="content">
-				  <span class="close"></span>
+				  <span class="close close-contact" tabindex="5"></span>
 				  <div class="modal-body">
 					<form
 					  name="contact"
@@ -55,6 +55,7 @@
 							type="text"
 							id="first"
 							name="first"
+							tabindex="5"
 							/>
 							<small></small>
 						</div>
@@ -67,6 +68,7 @@
 							type="text"
 							id="last"
 							name="last"
+							tabindex="5"
 							/>
 							<small></small>
 						</div>
@@ -79,6 +81,7 @@
 							type="email"
 							id="email"
 							name="email"
+							tabindex="5"
 							/>
 							<small></small>
 						</div>
@@ -86,14 +89,15 @@
 						<div
 							class="formData">
 							<label for="text">*Votre message</label><br>
-							<textarea id="text" name="text" type="text" rows="8"></textarea>
+							<textarea id="text" name="text" type="text" rows="8" tabindex="5"></textarea>
 							<small></small>
 						</div>
 			
 						<input
-							class="button button-submit"
+							class="button button-submit block-tab"
 							type="submit"
 							value="Envoyer"
+							tabindex="5"
 						/>
 					</form>
 				  </div>
@@ -102,19 +106,19 @@
 		
 			<div class="success-background">
 				<div class="success-content">
-				  <span class="close"></span>
+				  <span class="close" tabindex="5"></span>
 				  <p class="success-message">Merci de votre message !</p>
-				  <button class="button btn-close">Fermer</button>
+				  <button class="button btn-close" tabindex="5">Fermer</button>
 				</div>
 			</div>
 
-			<p class="dropdown__label">Trier par</p>
+			<p class="dropdown__label" tabindex="8">Trier par</p>
 			<div class="dropdown">
-				<button class="dropdown-toggle" type="button" aria-haspopup="true">-Sélectionnez-</button>
+				<button class="dropdown-toggle" type="button" aria-haspopup="true" tabindex="9">-Sélectionnez-</button>
 				<ul class="dropdown-menu" role="listbox" aria-expanded="false">
-					<li role="option" tabindex="0" class="popularity">Popularité</li>
-					<li role="option" tabindex="0" class="date">Date</li>
-					<li role="option" tabindex="0" class="title">Titre</li>
+					<li role="option" tabindex="9" class="popularity">Popularité</li>
+					<li role="option" tabindex="9" class="date">Date</li>
+					<li role="option" tabindex="9" class="title block-tab2">Titre</li>
 				</ul>
 			</div>
 

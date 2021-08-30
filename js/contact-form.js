@@ -7,6 +7,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 modalBtn.forEach((btn) => btn.addEventListener("click", () => {
   launchModal(modalbg);
 }));
+
 // launch modal form
 function launchModal(element) {
   element.style.display = "block";
@@ -20,10 +21,24 @@ const closeForm = document.querySelectorAll(".close");
 // launch modal close event
 closeForm.forEach((btn) => btn.addEventListener("click", () => {
 closeModal(modalbg)}));
+
+document.querySelector(".close").addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    closeModal(modalbg)
+  } 
+});
 // launch modal close form
 function closeModal(element) {
   element.style.display = "none";
 }
+
+// prevent tabbing from leaving form 
+document.querySelector(".block-tab").addEventListener('keydown', (e) => { 
+  if (e.keyCode == 9) {
+    e.preventDefault(); 
+    document.querySelector(".close-contact").focus();
+  } 
+});
 
 
 /* CLOSING SUCCESS MESSAGE */
@@ -54,7 +69,7 @@ const text = document.querySelector('#text');
 const form = document.querySelector('#contact');
 
 /* attaching the submit event listener to the form using addEventListener */
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', (e) => {
 
   // validate input fields 
   let isFirstValid = checkFirst(),
@@ -75,6 +90,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
   } else if (isFormValid) {
     launchModal(successBackground);
+    console.log(first.value, last.value, email.value, text.value);
     // prevent the success message from disappearing
     e.preventDefault();
   }

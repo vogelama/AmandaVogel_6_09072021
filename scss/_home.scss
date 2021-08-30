@@ -10,7 +10,7 @@
     border-radius: 5px;
     z-index: 999;
 
-    &:hover,:focus {
+    &:hover {
         background-color: $primaryLightClr;
         color: #000;
     }
@@ -160,7 +160,7 @@
     border-radius: 11px;
     font-size: .75em;
 
-    &:hover,:focus,:active,:target {
+    &:hover,:active,:target {
         background-color: $primaryDarkClr;
         color: #fff;
         border: .5px solid $primaryDarkClr;
